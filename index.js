@@ -1,6 +1,5 @@
 /*
  * @todo features:
- *     - Section
  *     - Grid
  *     - Masonry Grid
  *     - Button
@@ -10,5 +9,5 @@
  *     - 
  */
 
-export { default as Button } from './Button'
-export { default as Card } from './Card'
+export { default as Button } from './src/Button'
+export { default as Card } from './src/Card'
