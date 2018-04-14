@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, image, StyleSheet } from 'react-native'
-import RESS from '../ress'
+import RESS from '@bukharim96/ress'
 
 // Stateless Button Component
 export default (props) => {
@@ -46,12 +46,11 @@ export default (props) => {
 
 	// Markup
 	return (
-		<View style={[cardStyles, style]} {...restOfProps}>
-			{ header && <Text style={styles.cardHeaderStyles} children={header} /> }
-			{ featuredImgSrc && <Image style={styles.cardFeaturedImgStyles} source={featuredImgSrc} /> }
-			{ children && children }
-			{ footer && <View style={styles.cardFooterStyles} children={footer} /> }
-		</View>
+		<View
+			style={[cardStyles, style]}
+			{...restOfProps}
+			children={children && children}
+		/>
 	)
 }
 

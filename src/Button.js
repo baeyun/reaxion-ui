@@ -4,7 +4,7 @@ import {
 	TouchableOpacity,
 	View
 } from 'react-native'
-import RESS from '../ress'
+import RESS from '@bukharim96/ress'
 
 // Stateless Button Component
 export default (props) => {
