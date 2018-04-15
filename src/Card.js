@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, image, StyleSheet } from 'react-native'
 import RESS from '@bukharim96/ress'
+import theme from './theme'
 
 // Stateless Button Component
 export default (props) => {
@@ -16,33 +17,53 @@ export default (props) => {
 	let cardStyles = new RESS(props, {
 			default: {
 				alignSelf: 'stretch',
-				minHeight: 10,
-				marginLeft: 10,
-				marginRight: 10,
+				margin: 12,
+				marginHorizontal: 5,
+				padding: 20,
 				backgroundColor: '#fff',
-				borderColor: '#eaeaea',
-				borderWidth: 1,
-				borderStyle: 'solid',
 				borderRadius: 3,
-				padding: 15
+				overflow: 'hidden',
+				shadowColor: '#000',
+				shadowOffset: { width: 1, height: 2 },
+				shadowRadius: 3,
+				shadowOpacity: .15,
+
+				// android (Android +5.0)
+				elevation: 2
+			},
+			header: {
+				flexDirection: 'row',
+				alignItems: 'center',
+				justifyContent: 'space-between',
+				paddingVertical: 12,
+				marginHorizontal: -20,
+				marginTop: -20,
+				marginBottom: 20,
+				borderWidth: 0,
+				borderColor: theme.colors.lightGray,
+				borderStyle: 'solid',
+				borderBottomWidth: 1,
+				borderBottomRightRadius: 0,
+				borderBottomLeftRadius: 0,
+				elevation: 0
+			},
+			footer: {
+				flexDirection: 'row',
+				alignItems: 'center',
+				justifyContent: 'space-between',
+				paddingVertical: 12,
+				marginHorizontal: -20,
+				marginTop: 20,
+				marginBottom: -20,
+				borderWidth: 0,
+				borderColor: theme.colors.lightGray,
+				borderStyle: 'solid',
+				// borderTopWidth: 1,
+				borderTopRightRadius: 0,
+				borderTopLeftRadius: 0,
+				elevation: 0
 			}
 		})
-
-	const styles = {
-		cardHeaderStyles = {
-			alignItems: 'center',
-			paddingBottom: 10,
-			borderColor: '#eaeaea',
-			borderBottomWidth: 1
-		},
-		cardFeaturedImgStyles = {
-			flex: 1,
-			alignSelf: 'stretch'
-		},
-		cardFooterStyles = {
-			flex: 1
-		}
-	}
 
 	// Markup
 	return (

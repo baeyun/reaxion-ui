@@ -5,6 +5,7 @@ import {
 	View
 } from 'react-native'
 import RESS from '@bukharim96/ress'
+import theme from './theme'
 
 // Stateless Button Component
 export default (props) => {
@@ -24,16 +25,16 @@ export default (props) => {
 				borderStyle: 'solid',
 				borderWidth: 2,
 				justifyContent: 'center',
-				paddingTop: 8,
-				paddingBottom: 8,
-				paddingLeft: 12,
-				paddingRight: 12,
-				marginBottom: 10
+				paddingVertical: 7,
+				paddingHorizontal: 12,
+				minWidth: 40
 			},
 			
-			primary: { backgroundColor: '#007bff', borderColor: '#007bff' },
-			danger:  { backgroundColor: '#dc3545', borderColor: '#dc3545' },
-			warning: { backgroundColor: '#ffa500', borderColor: '#ffa500' },
+			primary: { backgroundColor: theme.colors.blue, borderColor: theme.colors.blue },
+			success: { backgroundColor: theme.colors.green, borderColor: theme.colors.green },
+			warning: { backgroundColor: theme.colors.yello, borderColor: theme.colors.yello },
+			danger:  { backgroundColor: theme.colors.red, borderColor: theme.colors.red },
+			light:   { backgroundColor: 'transparent', borderColor: 'transparent' },
 			
 			'primary, danger, warning': {
 				round: { borderRadius: 50 },
@@ -44,11 +45,13 @@ export default (props) => {
 		}),
 		btnTextStyles = new RESS(props, {
 			default: { color: '#333' },
-			'primary, danger, warning': { color: '#fff' },
+			'primary, success, danger, warning': { color: '#fff' },
+			light: { color: theme.colors.blue },
 			outlined: {
-				primary: { color: '#007bff' },
-				danger:  { color: '#dc3545' },
-				warning: { color: '#ffa500' }
+				primary: { color: theme.colors.blue },
+				success: { color: theme.colors.green },
+				warning: { color: theme.colors.yello },
+				danger:  { color: theme.colors.red }
 			}
 		})
 
@@ -57,7 +60,9 @@ export default (props) => {
 		<TouchableOpacity style={[btnStyles, style]} {...restOfProps}>
 			<Text
 				style={btnTextStyles}
-				children={children && children.toUpperCase()} />
+				// Transform text to uppercase
+				children={children && children.toUpperCase()}
+			/>
 		</TouchableOpacity>
 	)
 }
